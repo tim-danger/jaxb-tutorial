@@ -1,0 +1,27 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="urn:employees"
+            xmlns:emp="urn:employees">
+
+  <xsd:element name="employees">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="employee"
+                     type="emp:Employee"
+                     minOccurs="0"
+                     maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="Employee">
+    <xsd:sequence>
+      <xsd:element name="firstName"   type="xsd:string"/>
+      <xsd:element name="lastName"    type="xsd:string"/>
+      <xsd:element name="ssn"    type="xsd:string"/>
+      <xsd:element name="salary"    type="xsd:double" />
+      <xsd:element name="hireDate" type="xsd:date" />
+    </xsd:sequence>
+    <xsd:attribute name="id"   type="xsd:string"/>
+    <xsd:attribute name="supervisorId"   type="xsd:string"/>
+  </xsd:complexType>
+</xsd:schema>

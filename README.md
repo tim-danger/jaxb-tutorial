@@ -1,0 +1,2 @@
+# jaxb-tutorial
+Build the war file using the command "mvn clean install". Deploy it on a Tomcat-Webserver (Debug-Port 8000) and run the REST-Calls in the Postman-Collection that can be found in the etc-folder.

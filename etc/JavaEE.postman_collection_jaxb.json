@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "39d03cab-3825-42fe-8b1d-6fefbdb98bc0",
+		"name": "JavaEE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "jaxb",
+			"item": [
+				{
+					"name": "marshalToXML",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/jaxb-tutorial-1.0-SNAPSHOT/rest/marshal?firstname=Tom&lastname=Smith&hireDate=2020-06-07&ssn=123456789&salary=25000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jaxb-tutorial-1.0-SNAPSHOT",
+								"rest",
+								"marshal"
+							],
+							"query": [
+								{
+									"key": "firstname",
+									"value": "Tom"
+								},
+								{
+									"key": "lastname",
+									"value": "Smith"
+								},
+								{
+									"key": "hireDate",
+									"value": "2020-06-07"
+								},
+								{
+									"key": "ssn",
+									"value": "123456789"
+								},
+								{
+									"key": "salary",
+									"value": "25000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unmarshalFromXML",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:employees xmlns:ns2=\"urn:employees\">\n    <employee>\n        <firstName>Tom</firstName>\n        <lastName>Smith</lastName>\n        <ssn>123456789</ssn>\n        <salary>25000.0</salary>\n        <hireDate>2020-06-07+02:00</hireDate>\n    </employee>\n    <employee>\n        <firstName>Max</firstName>\n        <lastName>Payne</lastName>\n        <ssn>45678974</ssn>\n        <salary>525000.0</salary>\n        <hireDate>2020-06-27+02:00</hireDate>\n    </employee>\n    <employee>\n        <firstName>Captain</firstName>\n        <lastName>Crunch</lastName>\n        <ssn>123456789</ssn>\n        <salary>725000.0</salary>\n        <hireDate>2020-06-07+02:00</hireDate>\n    </employee>\n</ns2:employees>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/jaxb-tutorial-1.0-SNAPSHOT/rest/unmarshal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"jaxb-tutorial-1.0-SNAPSHOT",
+								"rest",
+								"unmarshal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
